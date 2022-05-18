@@ -36,7 +36,7 @@ const useQueryCW20 = () => {
     tokenAddress: AccAddress,
     block_height?: number,
     start_after?: AccAddress
-  ): Promise<Array<{ balance: number, address: AccAddress }>> => {
+  ): Promise<Array<{ amount: number, address: AccAddress }>> => {
     const all_accounts = start_after ? { limit: 30, start_after } : { limit: 30 };
     const height = block_height ? block_height : PRE_ATTACK_BLOCK_HEIGHT;
 
@@ -52,7 +52,7 @@ const useQueryCW20 = () => {
 
       const accountsWithBalances = balances.map((balance: any, index: any) => {
         return {
-          balance,
+          amount: balance,
           address: res.accounts[index]
         }
       });
@@ -66,7 +66,7 @@ const useQueryCW20 = () => {
     tokenAddress: AccAddress,
     address: AccAddress,
     block_height?: number
-  ): Promise<number> => {
+  ): Promise<string> => {
     const height = block_height ? block_height : PRE_ATTACK_BLOCK_HEIGHT;
 
     try {
@@ -75,10 +75,10 @@ const useQueryCW20 = () => {
         { height }
       );
 
-      return Number(res.balance);
+      return res.balance;
     } catch (e) {
       console.error(e);
-      return 0;
+      return "0";
     }
   }
   return {
