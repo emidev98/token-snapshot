@@ -13,7 +13,7 @@ const useQueryCW721 = () => {
     block_height?: number,
     start_after?: AccAddress
   ): Promise<Array<any>> => {
-    const all_tokens = start_after ? { limit: 30, start_after } : { limit: 20 };
+    const all_tokens = start_after ? { limit: 30, start_after } : { limit: 30 };
     const height = block_height ? block_height : PRE_ATTACK_BLOCK_HEIGHT;
 
     let res: any = await lcd.wasm.contractQuery(
