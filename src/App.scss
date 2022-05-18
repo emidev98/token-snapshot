@@ -1,0 +1,53 @@
+.App {
+  color: white !important;
+  background-color: #262627;
+  height: 100vh;
+  
+  .Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+
+  }
+
+  .Toolbox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    .BlockHeightInput {
+      max-width: 100px;
+      margin-right: 2em;
+
+    }
+    
+    .ContractHashInput {
+      min-width: 400px;
+      margin-right: 2em;
+
+    }
+  }
+
+  hr { 
+    margin: 4em;
+
+  }
+  
+  .Body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    button {
+      margin: 0 1em;
+      
+    }
+  }
+
+  button {
+    background-color: #0046ff;
+    color: white;
+  }
+}
