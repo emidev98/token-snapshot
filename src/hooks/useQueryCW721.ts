@@ -3,7 +3,7 @@ import { LCDClient } from '@terra-money/terra.js'
 
 const useQueryCW721 = () => {
   const lcd = new LCDClient({
-    URL: "https://solitary-wild-log.terra-mainnet.quiknode.pro/e29ad894ff7e7809f2a3fbfa8fd658e94eb67cdf",
+    URL: "https://lcd.terra.dev/",
     chainID: "columbus-5",
   });
   const PRE_ATTACK_BLOCK_HEIGHT = 7544910;
